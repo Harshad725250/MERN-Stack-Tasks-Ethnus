@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Navigation Bar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: #000;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 0;
+      color: white;
+      text-decoration: none;
+      border-right: 1px solid #fff;
+      font-size: 20px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .navbar a:last-child {
+      border-right: none;
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 4px;
+      background-color: orange;
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Product</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="#">Users</a>
+    <a href="#">Login</a>
+  </div>
+
+</body>
+</html>
