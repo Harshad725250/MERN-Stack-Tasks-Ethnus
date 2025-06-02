@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 24px;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 3px solid orange;
+  border-top: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Photo Gallery</h1>
+  </div>
+
+  <div class="gallery">
+    <img src="C:\Users\harsh\OneDrive\Pictures\Saved Pictures\39608.webp" alt="Image 1">
+    <img src="C:\Users\harsh\OneDrive\Pictures\Saved Pictures\download.jpg" alt="Image 2">
+    <img src="C:\Users\harsh\OneDrive\Pictures\Feedback\{A933C3BF-BD15-4121-B132-4744CBBC9625}\Capture001.png" alt="Image 3">
+    <img src="C:\Users\harsh\OneDrive\Desktop\AI-first-approach.webp">
+    <img src="C:\Users\harsh\OneDrive\Desktop\couchbase-background.jpg" alt="Image 5">
+    <img src="C:\Users\harsh\OneDrive\Desktop\A Digital Technologies, Operations & Experiences Company - Datamatics_files\uti.jpg" alt="Image 6">
+  </div>
+
+</body>
+</html>
