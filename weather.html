@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+  background-color: #a2d5c6;
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+}
+
+.weather-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.weather-info {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.temp {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.search input {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  color: white;
+  outline: none;
+}
+
+.search button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+  </style>
+  <script>
+    const apiKey = "1e1d3fbaf65d4272d279980f0c2b15a2"; 
+
+function getWeather() {
+  const city = document.getElementById("cityInput").value;
+  if (!city) return;
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  fetch(url)
+    .then(response => {
+      if (!response.ok) throw new Error("City not found");
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById("temp").innerText = Math.round(data.main.temp);
+      document.getElementById("city").innerText = data.name;
+      document.getElementById("description").innerText = data.weather[0].description;
+
+      const date = new Date();
+      const hours = date.getHours().toString().padStart(2, "0");
+      const minutes = date.getMinutes().toString().padStart(2, "0");
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const weekday = days[date.getDay()];
+
+      document.getElementById("time").innerText = `${hours}:${minutes} ${weekday}`;
+    })
+    .catch(error => {
+      alert("Error: " + error.message);
+    });
+}
+
+  </script>
+</head>
+<body>
+  <h1>Weather App</h1>
+  <div class="weather-container">
+    <div class="weather-info" id="weather-info">
+      <div class="temp" id="temp">--</div>
+      <div class="city" id="city">City</div>
+      <div class="time" id="time">--:-- Day</div>
+      <div class="description" id="description">--</div>
+    </div>
+
+    <div class="search">
+      <input type="text" id="cityInput" placeholder="Enter city" />
+      <button onclick="getWeather()">Search Button</button>
+    </div>
+  </div>
+</body>
+</html>

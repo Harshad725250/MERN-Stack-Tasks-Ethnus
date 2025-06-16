@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,3 +31,37 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Grade</title>
+</head>
+<body>
+  <script>
+    let marks = prompt("Enter your marks (0 - 100):");
+    marks = Number(marks); // Convert input to number
+
+    let grade;
+
+    if (isNaN(marks) || marks < 0 || marks > 100) {
+      grade = "Invalid marks entered!";
+    } else if (marks >= 90) {
+      grade = "A";
+    } else if (marks >= 80) {
+      grade = "B";
+    } else if (marks >= 70) {
+      grade = "C";
+    } else if (marks >= 60) {
+      grade = "D";
+    } else if (marks >= 50) {
+      grade = "E";
+    } else {
+      grade = "F";
+    }
+
+    document.write("<h2>Your Grade is: " + grade + "</h2>");
+  </script>
+</body>
+</html>
+>>>>>>> a4e0dbd47e11c18a235412746c2b1dab9814cda3

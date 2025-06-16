@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Red Star List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    ul.star-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.star-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    ul.star-list li::before {
+      content: "★";
+      color: red;
+      font-size: 18px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="star-list">
+    <li>Hummus</li>
+    <li>Pita</li>
+    <li>Green salad</li>
+    <li>Halloumi</li>
+  </ul>
+
+</body>
+</html>
